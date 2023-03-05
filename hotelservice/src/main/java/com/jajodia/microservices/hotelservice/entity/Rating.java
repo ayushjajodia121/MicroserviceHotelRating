@@ -1,4 +1,4 @@
-package com.jajodia.microservice.userservice.entities;
+package com.jajodia.microservices.hotelservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,5 +15,4 @@ public class Rating {
     private String hotelId;
     private int rating;
     private String remark;
-    private Hotel hotel;
 }

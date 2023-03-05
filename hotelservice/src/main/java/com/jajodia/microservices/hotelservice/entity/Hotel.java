@@ -29,6 +29,6 @@ public class Hotel {
     private String about;
 
     @Transient
-    private List<User> users = new ArrayList<>();
+    private List<Rating> ratings = new ArrayList<>();
 
 }

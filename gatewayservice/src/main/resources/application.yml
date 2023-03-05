@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: GATEWAY_SERVICE
+  cloud:
+    gateway:
+      # User service route
+      routes[0].id: USER_SERVICE
+      routes[0].uri: http://localhost:8081
+      routes[0].predicates[0]: Path=/api/v1/userServices/**
+
+      # Hotel service route
+      routes[1].id: HOTEL_SERVICE
+      routes[1].uri: http://localhost:8082
+      routes[1].predicates[0]: Path=/api/v1/hotelServices/**
+
+      # RATING _SERVICE service static resources route
+      routes[2].id: RATING_SERVICE
+      routes[2].uri: http://localhost:8083
+      routes[2].predicates[0]: Path=/api/v1/ratingService/**
+
+
+#      routes:
+#        - id: USER_SERVICE
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path=/api/v1/userServices/**
+#
+#        - id: RATING_SERVICE
+#          uri: http://localhost:8083
+#          predicates:
+#            - Path=/api/v1/ratingService/**
+#
+#        - id: HOTEL_SERVICE
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/api/v1/hotelServices/**

@@ -12,5 +12,5 @@ public interface UserService {
     List<User> getAllUsers();
 
     //get a single user
-    User getUser(String userId);
+    User getUser(String userId,String ratingsUrl,String getHotelByIdUrl);
 }

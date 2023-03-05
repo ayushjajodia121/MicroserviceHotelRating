@@ -5,15 +5,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Rating {
-    private String ratingId;
-    private String userId;
-    private String hotelId;
-    private int rating;
-    private String remark;
-    private Hotel hotel;
+@AllArgsConstructor
+public class Hotel {
+
+    private String name;
+
+    private String location;
+
+    private String about;
+
 }
