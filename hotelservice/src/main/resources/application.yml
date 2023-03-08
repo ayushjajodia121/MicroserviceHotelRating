@@ -2,12 +2,17 @@ server:
   port: 8082
 spring:
   application:
-    name: HOTEL_SERVICE
+    name: HOTEL-SERVICE
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
   datasource:
     url: jdbc:mysql://localhost:3306/micro_user_service
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     properties:
       hibernate:
@@ -15,6 +20,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+
 eureka:
   instance:
     prefer-ip-address: true
