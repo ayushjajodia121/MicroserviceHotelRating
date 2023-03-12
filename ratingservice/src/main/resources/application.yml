@@ -1,5 +1,10 @@
 server:
   port: 8083
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api/v1/ratingService/v2/api-docs
 spring:
   mvc:
     pathmatch:

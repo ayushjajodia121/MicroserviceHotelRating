@@ -1,10 +1,10 @@
-package com.jajodia.microservices.userservice;
+package com.jajodia.microservice.configservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserserviceApplicationTests {
+class ConfigserviceApplicationTests {
 
 	@Test
 	void contextLoads() {

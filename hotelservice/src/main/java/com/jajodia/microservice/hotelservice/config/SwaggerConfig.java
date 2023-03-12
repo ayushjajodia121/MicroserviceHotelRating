@@ -23,7 +23,7 @@ public class SwaggerConfig {
                 .select()
                 //Here adding base package to scan controllers. This will scan only controllers inside
                 //specific package and include in the swagger documentation
-                .apis(RequestHandlerSelectors.basePackage("com.jajodia.microservices.hotelservice.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.jajodia.microservice.hotelservice.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

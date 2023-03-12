@@ -1,5 +1,10 @@
 server:
   port: 8081
+springdoc:
+  swagger-ui:
+    path: /api/v1/userServices/swagger-ui
+  api-docs:
+    path: /api/v1/userServices/v2/api-docs
 spring:
   mvc:
     pathmatch:

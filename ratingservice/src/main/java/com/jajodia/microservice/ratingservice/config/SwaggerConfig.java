@@ -20,17 +20,15 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(generateAPIInfo())
+                .pathMapping("/api/v1/ratingService")
                 .select()
-                //Here adding base package to scan controllers. This will scan only controllers inside
-                //specific package and include in the swagger documentation
-                .apis(RequestHandlerSelectors.basePackage("com.jajodia.microservices.ratingservice.controller"))
-                .paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.jajodia.microservice.ratingservice.controller"))
                 .build();
     }
     //Api information
     private ApiInfo generateAPIInfo() {
-        return new ApiInfo("Swagger Demo", "Implementing Swagger with SpringBoot Application", "1.0.0",
-                "https://www.99xtechnology.com/", getContacts(), "", "", new ArrayList());
+        return new ApiInfo("Rating Service", "Contains APIs for Rating Service", "1.0.0",
+                "https://www.jajodia.com/", getContacts(), "", "", new ArrayList());
     }
 
     // Developer Contacts
