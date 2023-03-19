@@ -8,3 +8,6 @@ spring:
       server:
         git:
           uri: https://github.com/ayushjajodia121/microserviceHotelRatingConfiguration
+          username: ayushjajodia121
+          password: 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
+          clone-on-start: true

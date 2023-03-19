@@ -6,11 +6,15 @@ springfox:
       v2:
         path: /api/v1/ratingService/v2/api-docs
 spring:
+  profiles:
+    active: local
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
     name: RATING-SERVICE
+  config:
+    import: configserver:http://localhost:8888
   data:
     mongodb:
       url: mongodb://localhost:27017

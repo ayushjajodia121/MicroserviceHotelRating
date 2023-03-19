@@ -8,12 +8,15 @@ springfox:
     swagger-ui:
       base-url: /api/v1/hotelServices/swagger-ui
 spring:
+  profiles:
+    active: local
   application:
     name: HOTEL-SERVICE
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
+  config:
+    import: configserver:http://localhost:8888
   datasource:
     url: jdbc:mysql://localhost:3306/micro_user_service
     username: root

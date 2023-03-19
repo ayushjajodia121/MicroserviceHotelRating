@@ -6,6 +6,10 @@ springdoc:
   api-docs:
     path: /api/v1/userServices/v2/api-docs
 spring:
+  profiles:
+    active: local
+  config:
+    import: configserver:http://localhost:8888
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
