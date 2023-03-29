@@ -7,7 +7,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ayushjajodia121/microserviceHotelRatingConfiguration
-          username: ayushjajodia121
-          password: ''
+          uri: https://github.com/ayushjajodia121/microserviceHotelRatingConfig
           clone-on-start: true

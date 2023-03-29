@@ -21,6 +21,7 @@ spring:
       database: microservices
 eureka:
   instance:
+    statusPageUrlPath: api/v1/ratingService/actuator
     prefer-ip-address: true
   client:
     fetch-registry: true
