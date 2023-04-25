@@ -40,3 +40,46 @@ ratingservice:
   url: http://localhost:8083/api/v1/ratingService/
 hotelservice:
   url: http://localhost:8082/api/v1/hotelServices/
+
+# configurations for actuator
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /api/v1/userServices/actuator
+      exposure:
+        include: health,*
+  endpoint:
+    health:
+      show-details: always
+
+# configuration for resilience4j
+resilience4j:
+  ratelimiter:
+    instances:
+      userRateLimiter:
+        limit-refresh-period: 10s
+        limit-for-period: 2
+        timeout-duration: 2s
+  retry:
+    instances:
+      ratingHotelServiceRetry:
+        max-attempts: 3
+        wait-duration: 3s
+  circuitbreaker:
+    instances:
+      ratingHotelServiceCircuitBreaker:
+        recordExceptions:
+          - org.springframework.web.client.ResourceAccessException
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
